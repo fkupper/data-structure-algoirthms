@@ -18,11 +18,11 @@ while (true)
     a.forEach(v => process.stdout.write(v.toString()+' '));
     
     console.log('');
-    let res1 = maxPairWiseProduct.slow(a);
-    let res2 = maxPairWiseProduct.fastFor(a);
-    let res3 = maxPairWiseProduct.fastForEach(a);
-    let res4 = maxPairWiseProduct.fastWhile(a);
-    let res = [res1,res2,res3,res4];
+    let res = Array();
+    res.push(maxPairWiseProduct.slow(a));
+    res.push(maxPairWiseProduct.fastFor(a));
+    res.push(maxPairWiseProduct.fastForEach(a));
+    res.push( maxPairWiseProduct.fastWhile(a));
     
     if (!res.every(v => v === res[0]))
     {

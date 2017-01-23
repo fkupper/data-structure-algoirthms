@@ -26,7 +26,24 @@ const fibonacciMySolution = (n, previous) =>
   return previous[n];
 }
 
+const fibonacciTable = (n) =>
+{
+  let fibTable = Array(n);
+  fibTable[0] = 0;
+  fibTable[1] = 1;
+  
+  for (var i = 2; i<=n; ++i)
+  {
+    fibTable[i] = fibTable[i-1] + fibTable[i-2]
+  }
+  
+  return fibTable[n];
+}
+
 module.exports = {
     naive: fibonacciNaive,
-    mySolution: fibonacciMySolution
+    mySolution: fibonacciMySolution,
+    table: fibonacciTable
+    
 }
+

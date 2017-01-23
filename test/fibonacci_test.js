@@ -2031,6 +2031,20 @@ describe('fibonacci my solution', () => {
             }).timeout(10000);
         }
     );
+    
+});
+
+describe('fibonacci table solution', () => {
+
+    numbers.forEach
+    (
+        function(item, index)
+        {
+            it('should work on fibonacci number '+item[0] , () => {
+                expect(fibonacci.table(item[0])).to.equal(item[1]);
+            }).timeout(10000);
+        }
+    );
 
     
     
