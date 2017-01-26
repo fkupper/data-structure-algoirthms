@@ -18,7 +18,7 @@ describe('gcdSlow', () => {
 
     it('should work with big numbers', () => {
         expect(gcd.slow(bigNumbers[0][0], bigNumbers[0][1])).to.equal(bigNumbers[1]);
-    }).timeout(10000);
+    }).timeout(100000);
     
     it('should work with prime numbers', () => {
         expect(gcd.slow(primeNumbers[0][0], primeNumbers[0][1])).to.equal(primeNumbers[1]);
@@ -38,7 +38,7 @@ describe('gcdEucliedeanRecursive', () => {
 
     it('should work with big numbers', () => {
         expect(gcd.euclideanRecursive(bigNumbers[0][0], bigNumbers[0][1])).to.equal(bigNumbers[1]);
-    }).timeout(10000);
+    }).timeout(100000);
     
     it('should work with prime numbers', () => {
         expect(gcd.euclideanRecursive(primeNumbers[0][0], primeNumbers[0][1])).to.equal(primeNumbers[1]);

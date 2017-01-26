@@ -27,7 +27,7 @@ describe('maxPairWiseProductSlow', () => {
 
     it('should work with huge dataset', () => {
         expect(maxPairWiseProduct.slow(hugeDataset[0])).to.equal(hugeDataset[1]);
-    }).timeout(10000);
+    }).timeout(100000);
     
 });
 
@@ -51,7 +51,7 @@ describe('maxPairWiseProductFastForEach', () => {
     
     it('should work with huge dataset', () => {
         expect(maxPairWiseProduct.fastForEach(hugeDataset[0])).to.equal(hugeDataset[1]);
-    }).timeout(10000);
+    }).timeout(100000);
 
 });
 
@@ -75,7 +75,7 @@ describe('maxPairWiseProductFastFor', () => {
     
     it('should work with huge dataset', () => {
         expect(maxPairWiseProduct.fastFor(hugeDataset[0])).to.equal(hugeDataset[1]);
-    }).timeout(10000);
+    }).timeout(100000);
 
 });
 
@@ -101,6 +101,6 @@ describe('maxPairWiseProductFastWhile', () => {
     
     it('should work with huge dataset', () => {
         expect(maxPairWiseProduct.fastWhile(hugeDataset[0])).to.equal(hugeDataset[1]);
-    }).timeout(10000);
+    }).timeout(100000);
 
 });

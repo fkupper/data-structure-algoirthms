@@ -1,5 +1,37 @@
 'use strict';
 
+let readline = require('readline');
+
+process.stdin.setEncoding('utf8');
+
+let rl = readline.createInterface({
+  input: process.stdin,
+  terminal: false
+});
+
+let input = [];
+
+rl.prompt();
+rl.on('line', readLine);
+
+function readLine(line) {
+
+  if (line !== "\n") {
+    input.push(line);
+  }
+
+  let sequence = input[0].toString().split(' ').map(number => parseInt(number, 10));
+  sequence.forEach(
+    function(item)  {
+      console.log(fibonacciTable(item));
+    }
+  );
+  
+  process.exit();
+      
+}
+
+
 //The first implementation, intentionally made slow
 const fibonacciNaive = (n) => 
 {

@@ -21,30 +21,13 @@ function readLine(line) {
   }
 
   let inputs = input[0].toString().split(' ').map(number => parseInt(number, 10));
-  console.log(gcdEuclideanRecursive(inputs[0], inputs[1]));
+  console.log(lcmGcd(inputs[0], inputs[1]));
     
   process.exit();
       
 }
 
-
-
-//The first implementation, intentionally made slow
-const gcdNaive = (a,b) => 
-{
-  
-  let greater = Math.max(a,b);
-  let best = 0;
-  
-  for(var i = 0 ; i <= greater; ++i )
-  {
-    if( a%i === 0 && b%i === 0 )
-      best = i;
-  }
-  
-  return best;
-
-};
+//lcm(a, b) = ab/gcd(a, b)
 
 const gcdEuclideanRecursive = (a,b) =>
 {
@@ -54,8 +37,22 @@ const gcdEuclideanRecursive = (a,b) =>
   return gcdEuclideanRecursive(b, a%b);
 }
 
+const lcmGcd = (a,b) => 
+{
+  return (a*b) / gcdEuclideanRecursive(a,b);
+}
+
+const lcmNaive = (a,b)=>
+{
+  for (var l = 1; l <= a * b; ++l)
+    if (l % a == 0 && l % b == 0)
+      return l;
+
+  return a * b;
+};
+
 module.exports = {
-    slow: gcdNaive,
-    euclideanRecursive: gcdEuclideanRecursive
+    naive: lcmNaive,
+    fast: lcmGcd
 
 }
